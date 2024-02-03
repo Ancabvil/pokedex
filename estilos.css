@@ -1,0 +1,55 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid{
+
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    gap: 2px 2px;
+    grid-auto-flow: row;
+  
+  
+
+
+}
+body{
+  background-color: #ececec;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.head{
+  background-color: rgb(187, 70, 49);
+  padding: 20px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  color: white;
+}
+
+#container{
+  width: min(100%, 1000px);
+  margin: 100px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card{
+  width: 230px;
+  margin-top: 100px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card span{
+  color: #6e6e6e;
+  font-weight: 500;
+}
