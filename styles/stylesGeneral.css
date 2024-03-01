@@ -1,0 +1,478 @@
+/* Fuentes */
+@font-face {
+    font-family: 'Gellisto';
+    src: url("../fonts/gellisto.ttf");
+}
+
+@font-face {
+    font-family: 'Jackson';
+    src: url("../fonts/jackson.ttf");
+}
+
+@font-face {
+    font-family: 'Mermaid';
+    src: url("../fonts/mermaid.ttf");
+}
+
+@font-face {
+    font-family: 'Good';
+    src: url("../fonts/good.ttf");
+}
+
+header {
+    background-color: #6b1b1b;
+    border-bottom: 5px solid #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+    header {
+        border-bottom: 2px solid #000000;
+        /* Reduce el porcentaje del borde */
+    }
+}
+
+
+body {
+    background-size: 100%;
+    /* Ajusta la imagen al tamaño del contenedor */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* Imagen del cursor */
+    cursor: url('../images/pokeballcursor.png'), pointer;
+}
+
+@media screen and (max-width: 1700px) {
+    body {
+        background-size: cover;
+    }
+}
+
+/* Contiene el buscador y el botón del modo oscuro */
+#contenedor-barra-superior {
+    top: 0px;
+    left: 50%;
+    position: sticky;
+    z-index: 1000;
+    /* Posición respecto a la profundidad (eje Z) */
+
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    flex-direction: row;
+
+    width: 100%;
+    height: 70px;
+    background-color: #670000;
+    border-bottom: 2px solid #000000;
+}
+
+/* Contiene el botón del modo oscuro */
+#contenedor-modo {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    margin-right: auto;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+
+}
+
+/* Botón del modo oscuro */
+#boton-modo {
+    box-sizing: border-box;
+    background-color: #b0abb7;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 5px;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    width: 40px;
+}
+
+/* Icono del botón del modo oscuro */
+#imagen-modo {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+/* Contenedor principal de la lista/información */
+#contenedor-pokedex {
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Donde va contenido toda una tarjeta de un pokémon */
+.contenedor-elemento {
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 30px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+
+    width: 235px;
+    max-width: 235px;
+    min-width: 235px;
+
+    /* Imagen del cursor al seleccionar algo */
+    cursor: url('../images/openpokeballcursor.png'), pointer;
+
+    a {
+        /* Imagen del cursor al seleccionar algo */
+        cursor: url('../images/openpokeballcursor.png'), pointer;
+    }
+}
+
+.contenedor-elemento.modo-oscuro {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 1);
+    border: 2px solid #FFFFFF;
+    background-color: #000000;
+}
+
+.contenedor-elemento.modo-claro {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 1);
+    border: 2px solid #000000;
+    background-color: #FFFFFF;
+}
+
+/* Todos los tipos del pokémon */
+.contenedor-tipos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Un tipo específico del pokémon */
+.contenedor-tipo {
+    border-radius: 25px;
+    margin: 10px;
+    min-width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+}
+
+/* Texto del tipo */
+.contenedor-texto-tipo {
+    font-size: 16px;
+    font-family: 'Mermaid';
+    color: #FFFFFF;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.95);
+}
+
+/* Imagen del elemento (pokémon) */
+.contenedor-elemento a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Nombre del pokémon */
+.contenedor-nombre {
+    margin-left: 15px;
+    font-family: 'Mermaid';
+    font-size: 24px;
+}
+
+.contenedor-nombre.modo-claro {
+    color: #000000;
+}
+
+.contenedor-nombre.modo-oscuro {
+    color: #FFFFFF;
+}
+
+/* Número del pokémon */
+.contenedor-numero {
+    margin-left: 15px;
+    font-family: 'Good';
+    font-size: 14px;
+}
+
+.contenedor-numero.modo-claro {
+    color: #000000;
+}
+
+.contenedor-numero.modo-oscuro {
+    color: #FFFFFF;
+}
+
+/* Para las animaciones de las tarjetas pokémon */
+.elemento-animado {
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Aumento de tamaño de las tarjetas al pasar el ratón por encima */
+.elemento-animado:hover {
+    transform: scale(1.1);
+}
+
+/* Colores de los contenedores de cada tipo */
+.contenedor-tipos {
+
+    .Normal {
+        background-color: #626262;
+    }
+
+    .Lucha {
+        background-color: #B96B17;
+    }
+
+    .Volador {
+        background-color: #84B1D4;
+    }
+
+    .Veneno {
+        background-color: #9A4FD4;
+    }
+
+    .Tierra {
+        background-color: #9B6434;
+    }
+
+    .Roca {
+        background-color: #C7BE8E;
+    }
+
+    .Bicho {
+        background-color: #5FA21E;
+    }
+
+    .Fantasma {
+        background-color: #410C50;
+    }
+
+    .Acero {
+        background-color: #4F8092;
+    }
+
+    .Fuego {
+        background-color: #7B0808;
+    }
+
+    .Agua {
+        background-color: #1E56A2;
+    }
+
+    .Planta {
+        background-color: #0DB100;
+    }
+
+    .Eléctrico {
+        background-color: #FFBB00;
+    }
+
+    .Psíquico {
+        background-color: #FF24B0;
+    }
+
+    .Hielo {
+        background-color: #6DF2FF;
+    }
+
+    .Dragón {
+        background-color: #071760;
+    }
+
+    .Siniestro {
+        background-color: #4E3E3D;
+    }
+
+    .Hada {
+        background-color: #B236C3;
+    }
+}
+
+/* Estilo del texto de los mensajes de error */
+.mensaje-error {
+    font-family: "Mermaid";
+    font-size: 28px;
+    color: #ff0000;
+    text-shadow: 1px 1px 1px rgb(0, 0, 0);
+    -webkit-text-stroke: 0.5px #000000;
+}
+
+/* Animación del color de las tarjetas al pasar el ratón según el tipo 1 */
+.elemento-animado.Normalt1:hover {
+    border-color: #626262;
+    box-shadow: 0 0 45px #626262;
+}
+
+.elemento-animado.Luchat1:hover {
+    border-color: #B96B17;
+    box-shadow: 0 0 45px #B96B17;
+}
+
+.elemento-animado.Voladort1:hover {
+    border-color: #84B1D4;
+    box-shadow: 0 0 45px #84B1D4;
+}
+
+.elemento-animado.Venenot1:hover {
+    border-color: #9A4FD4;
+    box-shadow: 0 0 45px #9A4FD4;
+}
+
+.elemento-animado.Tierrat1:hover {
+    border-color: #9B6434;
+    box-shadow: 0 0 45px #9B6434;
+}
+
+.elemento-animado.Rocat1:hover {
+    border-color: #C7BE8E;
+    box-shadow: 0 0 45px #C7BE8E;
+}
+
+.elemento-animado.Bichot1:hover {
+    border-color: #5FA21E;
+    box-shadow: 0 0 45px #5FA21E;
+}
+
+.elemento-animado.Fantasmat1:hover {
+    border-color: #410C50;
+    box-shadow: 0 0 45px #410C50;
+}
+
+.elemento-animado.Acerot1:hover {
+    border-color: #4F8092;
+    box-shadow: 0 0 45px #4F8092;
+}
+
+.elemento-animado.Fuegot1:hover {
+    border-color: #7B0808;
+    box-shadow: 0 0 45px #7B0808;
+}
+
+.elemento-animado.Aguat1:hover {
+    border-color: #1E56A2;
+    box-shadow: 0 0 45px #1E56A2;
+}
+
+.elemento-animado.Plantat1:hover {
+    border-color: #0DB100;
+    box-shadow: 0 0 45px #0DB100;
+}
+
+.elemento-animado.Eléctricot1:hover {
+    border-color: #FFBB00;
+    box-shadow: 0 0 45px #FFBB00;
+}
+
+.elemento-animado.Psíquicot1:hover {
+    border-color: #FF24B0;
+    box-shadow: 0 0 45px #FF24B0;
+}
+
+.elemento-animado.Hielot1:hover {
+    border-color: #6DF2FF;
+    box-shadow: 0 0 45px #6DF2FF;
+}
+
+.elemento-animado.Dragónt1:hover {
+    border-color: #071760;
+    box-shadow: 0 0 45px #071760;
+}
+
+.elemento-animado.Siniestrot1:hover {
+    border-color: #4E3E3D;
+    box-shadow: 0 0 45px #4E3E3D;
+}
+
+.elemento-animado.Hadat1:hover {
+    border-color: #B236C3;
+    box-shadow: 0 0 45px #B236C3;
+}
+
+/* Animación del color de las tarjetas al pasar el ratón según el tipo 2 */
+.elemento-animado.Normalt2:hover {
+    border-color: #626262;
+}
+
+.elemento-animado.Luchat2:hover {
+    border-color: #B96B17;
+}
+
+.elemento-animado.Voladort2:hover {
+    border-color: #84B1D4;
+}
+
+.elemento-animado.Venenot2:hover {
+    border-color: #9A4FD4;
+}
+
+.elemento-animado.Tierrat2:hover {
+    border-color: #9B6434;
+}
+
+.elemento-animado.Rocat2:hover {
+    border-color: #C7BE8E;
+}
+
+.elemento-animado.Bichot2:hover {
+    border-color: #5FA21E;
+}
+
+.elemento-animado.Fantasmat2:hover {
+    border-color: #410C50;
+}
+
+.elemento-animado.Acerot2:hover {
+    border-color: #4F8092;
+}
+
+.elemento-animado.Fuegot2:hover {
+    border-color: #7B0808;
+}
+
+.elemento-animado.Aguat2:hover {
+    border-color: #1E56A2;
+}
+
+.elemento-animado.Plantat2:hover {
+    border-color: #0DB100;
+}
+
+.elemento-animado.Eléctricot2:hover {
+    border-color: #FFBB00;
+}
+
+.elemento-animado.Psíquicot2:hover {
+    border-color: #FF24B0;
+}
+
+.elemento-animado.Hielot2:hover {
+    border-color: #6DF2FF;
+}
+
+.elemento-animado.Dragónt2:hover {
+    border-color: #071760;
+}
+
+.elemento-animado.Siniestrot2:hover {
+    border-color: #4E3E3D;
+}
+
+.elemento-animado.Hadat2:hover {
+    border-color: #B236C3;
+}

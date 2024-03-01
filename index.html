@@ -1,25 +1,73 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link rel="stylesheet" href="estilos.css">
-        <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
-    </head>
-<div class="head">
-    <h1>Pokedex</h1>
-    <header><p id="tema">cambia el tema</p></header>
-    <script src="index.js"></script>    
-  </div>
-  <div id="grid">
-    <div id="container"></div>
-    <div id="container"></div>
-    <div id="container"></div>
-    <div id="container"></div>
-    <div id="container"></div>
-  </div>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/stylesIndex.css">
+    <link rel="icon" href="images/pokeball.ico" type="image/x-icon">
+    <title>Pokédex</title>
+</head>
+
+<body>
+    <header>
+        <!-- Contenido del encabezado de página -->
+        <img src="images/logo.png"/>
+    </header>
+
+    <main>
+        <!-- Contenido principal de la página -->
+
+        <div id="contenedor-barra-superior">
+
+            <div id="contenedor-modo">
+                <!-- Aquí es donde está el botón del cambio de modo -->
+                <div id="boton-modo">
+                    <img src="images/day-night.png" id="imagen-modo" />
+                </div>
+            </div>
+
+            <div id="contenedor-buscador">
+                <!-- Aquí es donde está el buscador -->
+                <input type="text" id="buscador" placeholder="Buscar por nombre">
+                <img src="images/lupa.png" id="icono-lupa" />
+            </div>
+
+            <div id="contenedor-filtro-tipos">
+                <!-- Aquí es donde está el filtro para los tipos de los pokémon -->
+                <div id="filtro">
+                    
+                </div>
+            </div>
+        </div>
+
+
+        <div id="contenedor-pokedex">
+            <section id="contenedor-lista">
+                <!-- Aquí es donde aparece la lista con los pokémon -->
+                <div id="lista-pokemons">
+                    <!-- Imagen por defecto de carga de la lista -->
+                    <img src="images/mewloading.gif" width="250px"/>
+                </div>
+            </section>
+        </div>
+
+
+        <div id="contenedor-flecha-abajo">
+            <img src="images/flecha-abajo.png"/>
+        </div>
+
+        <div id="contenedor-flecha-arriba">
+            <img src="images/flecha-arriba.png"/>
+        </div>
+
+
+    </main>
+
+    <footer>
+        <!-- Contenido del pie de página -->
+        <script src="scripts/scriptGeneral.js"></script>
+        <script src="scripts/scriptIndex.js"></script>
+    </footer>
 </body>
 </html>
